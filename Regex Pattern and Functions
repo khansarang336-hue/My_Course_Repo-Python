@@ -1,0 +1,252 @@
+re.search(pattern, string)
+
+Looks for the first occurrence.
+Returns a match object if found.
+Returns None if not found.
+
+An entry like <re.Match object; span=(7, 13), match='Python'> is a Python Match object returned by the re module. It indicates that your regular expression search successfully found a pattern match inside your string.Rather than returning a simple text string or a boolean, Python returns this object packed with detailed metadata about the match.Breakdown of the Match Object Datare.Match object: The underlying type or class of the returned data.span=(7, 13): The exact index positions of the match inside your original string. It starts at index 7 and goes up to, but does not include, index 13.match='Python': The actual substring text that triggered the match.How to Extract the Data In Your CodeYou can easily extract these pieces of information using built-in methods provided by the Python re module:.group(): Extracts the matched text string ('Python')..span(): Extracts the start and end positions as a tuple ((7, 13))..start(): Extracts only the starting index (7)..end(): Extracts only the ending index (13).
+
+re.findall() — Find All Matches
+
+Returns all matches as a list.
+
+4. Special Characters
+
+Regex becomes powerful because of special symbols.
+
+\d → Digit
+
+Matches numbers 0-9.
+
+\D → Non-digit
+
+\w → Word character
+
+Matches:
+
+letters
+digits
+underscore _
+
+\W → Non-word character @!
+
+\s → Whitespace
+
+Matches:
+
+space
+tab
+newline
+
+\S → Non-whitespace
+
+5. The Dot (.)
+
+. means any character except newline.
+
+6. Character Sets [ ]
+
+Find any one character from the set.
+
+7. Range of Characters
+Lowercase letters
+[a-z]
+Uppercase letters
+[A-Z]
+Digits
+[0-9]
+
+
+8. Negation ^ inside [ ]
+
+Means "NOT".
+
+9. Quantifiers
+
+Quantifiers specify how many times a pattern should occur.
+
++ → One or More
+text = "123 abc 4567"
+
+print(re.findall(r"\d+", text))
+* → Zero or More
+text = "color colour colouur"
+
+print(re.findall(r"colou*r", text))
+
+? → Zero or One
+text = "color colour"
+
+print(re.findall(r"colou?r", text))
+
+Output:
+
+['color', 'colour']
+
+{n} → Exactly n times
+text = "1234 12 123"
+
+print(re.findall(r"\d{3}", text))
+
+{n,m} → Between n and m times
+text = "1 12 123 1234"
+
+print(re.findall(r"\d{2,3}", text))
+
+^ → Start of string
+text = "Python is awesome"
+
+print(re.search(r"^Python", text))
+
+Found because the string starts with Python.
+$ → End of string
+text = "I love Python"
+
+print(re.search(r"Python$", text))
+
+Found because Python is at the end.
+
+1. re.split()
+
+Split text using regex.
+
+import re
+
+text = "apple,banana;orange mango"
+
+result = re.split(r"[,; ]", text)
+
+print(result)
+
+Output:
+
+['apple', 'banana', 'orange', 'mango']
+
+2. re.sub() — Replace Text
+import re
+
+text = "I love Java"
+
+new_text = re.sub("Java", "Python", text)
+
+print(new_text)
+
+Output:
+
+I love Python
+
+13. Extracting Emails (Practical Example)
+import re
+
+text = """
+john@gmail.com
+admin@yahoo.com
+support@company.org
+"""
+
+emails = re.findall(
+    r"\w+@\w+\.\w+",
+    text
+)
+
+print(emails)
+
+Output:
+
+['john@gmail.com',
+ 'admin@yahoo.com',
+ 'support@company.org']
+14. Extracting Phone Numbers
+import re
+
+text = """
+03001234567
+03111234567
+03221234567
+"""
+
+phones = re.findall(r"03\d{9}", text)
+
+print(phones)
+
+Output:
+
+['03001234567',
+ '03111234567',
+ '03221234567']
+15. Groups ( )
+
+Groups allow you to capture parts of a match.
+
+import re
+
+text = "My date of birth is 15-06-2026"
+
+match = re.search(r"(\d{2})-(\d{2})-(\d{4})", text)
+
+print(match.group(1))
+print(match.group(2))
+print(match.group(3))
+
+Output:
+
+15
+06
+2026
+16. Raw Strings r""
+
+Always write regex patterns as raw strings.
+
+Good:
+
+r"\d+"
+
+Bad:
+
+"\d+"
+
+The r tells Python not to treat backslashes specially.
+
+Most Important Regex Cheat Sheet
+Pattern	Meaning	Example
+\d	digit	5
+\D	non-digit	a
+\w	word character	A, 1, _
+\W	non-word	@
+\s	whitespace	space
+\S	non-whitespace	a
+.	any character	a
+*	zero or more	ab*
++	one or more	ab+
+?	zero or one	ab?
+^	start	^Hello
+$	end	world$
+[abc]	a or b or c	[aeiou]
+[^abc]	not a, b, c	[^0-9]
+{n}	exactly n	\d{3}
+{n,m}	between n and m	\d{2,5}
+Practice Exercises
+
+Try solving these on your own:
+
+Extract all numbers from:
+text = "Apple costs 100 and Mango costs 250"
+Find all words beginning with P:
+text = "Python PHP Java Perl"
+Extract all email addresses:
+text = "Contact us: admin@test.com, help@gmail.com"
+Validate a Pakistani mobile number:
+03001234567
+Replace all spaces with -.
+
+Once you are comfortable with these basics, the next topics should be:
+
+Greedy vs Non-Greedy matching
+Named Groups
+Lookahead and Lookbehind
+Regex Flags (IGNORECASE, MULTILINE)
+Complex validation patterns
+
+These advanced concepts are where regex becomes extremely powerful.
+
+o

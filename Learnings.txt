@@ -1,0 +1,182 @@
+Learned
+Variables & Expression
+Int
+Float
+Print()
+quit()
+Input() function to take input from users
+type casting
+Assignment Operators
+Comparison Operators (==,!=, >, <,  >=, <=)
+Precedence (Parenthesis, Power, Divide, Multiply, Addition, Subtraction, Left to Right)
+Conditional Statement (If, else, elif)
+Indentation for closing and starting the new code in Python
+Try:, except:
+Functions Thing () Reusable Stored
+def greet(lang):
+  if lang = "es":
+    return 'Helo'
+  elif lang = "fr":
+    return 'Hola'
+def addtwo(a,b):
+  added = a+b
+  return added
+
+type() functions return type of the Variables
+Max() & Min() (Space is the smallest thing) (lower letters are bigger than upper case letter)
+def building our own functions (def only define function not invoke them)
+Keywords (Lang, return)
+Function Call p = myfunction(a, b)
+While Loop while n>10:
+break statement in while loop close the Loop
+continue keyword in while loop will send you in the top
+for i in[5,4,3,2,1]:
+friends = ['Ali', 'raza', 'haider'] for friend in friends: print ("Hello", friend) print("done")
+Finding the Largest Number
+list num = [2,3,4,5]
+Boolean (True and False) A = True, B = False
+find the smallest number with None keyword
+the is and isnot operator similar as == but stronger
+None keyword  it checks the type and value at the same time
+Open("romeo.tx", "r") keyword to work with files
+\n " used for new line and it is only one character"
+len("sarang") this function tells how many characters are in string
+for loop to go through the files.
+handle.read() read function reads the whole files
+line.rstrip() will remove the newline character
+line.startswith('From:'):
+if not line.startswith('From:'):
+upper() keyword for uppercases
+Handling the files filehandle = open(filename,'mode')
+Keywords:
+rstrip()
+strip()
+split(":")
+open()
+input()
+upper()
+startswith()
+read()
+len()
+max()
+min()
+quit()
+exit()
+print()
+type()
+rang()
+list()
+append()
+sort()
+rfind() reverse find string
+is and  is not
+LIST:---
+Algorithm = a set of rules & step use to solve a problem
+Data Structures = a particular way of organizing data in a computer
+Adding the List
+slicing the LIST
+list[1:3] colon is not including skiping Operators
+in and not in
+some=[0,20,25,6]
+9 in some
+False
+9 in not some
+True
+COLLECTION Dictoinaries
+cabinet = dict()
+cabinet['summer'] = 12
+cabinet['fall'] = 3
+cabinet['spring'] = 75
+print(cabinet['fall'])
+3
+cabinet['fall']  =  cabinet['fall'] + 1
+print(cabinet['fall'])
+4
+get() method for dictionary
+counts =
+for key in counts:
+print(key, counts[key])
+keys()
+values()
+items() tuple
+
+STRINGS lower(), upper(), find(' ', starting position),  replace(old, new), lstrip, rstrip, strip
+LIST
+Dictionary
+Tuples
+SETS
+5. Read List Comprehension topic (advance version of python)
+
+REGULAR EXPRESIONS
+^X.*:
+(^)startswitch X (.*) match and character (:) ends with :
+^X-\S+:
+(^)startswitch X- (\S) match any non whitespace character (:) ends with :
+Learn more about this????
+
+NETWORK & SOCKETS
+Collect data from web server
+import socket
+HTTP GET Request
+mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #making the socket
+mysocket.connect(('data.pr4e.org',80)) #connecting the socket with server
+cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode() #creating the variable to send the request to server with UTF-8 encoding
+mysocket.send(cmd)
+
+Parsing HTML with beautifulsoup
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+html = urllib.request.urlopen(url, context=ctx).read()
+x = BeautifulSoup(html,'html.parser')
+
+Parsing XML
+import urllib.request, urllib.parse, urllib.error
+import xml.etree.ElementTree as ET
+XML = urllib.request.urlopen(url)
+tree = ET.fromstring(data)
+lst = tree.findall('users/user')
+
+JSON (it is like a dictionary or list of python)
+import json
+info = json.loads(data)
+
+Service Oriented architecture
+Using APIs
+Forward geocoding API
+
+send the data over internet by encoding in UTF-8
+receive the data in python by decode it in unicode
+
+Methods
+Classes and Objects
+Object Oriented
+Inheritance single,mutlilevel, multiple
+Abstraction
+Encapsulation
+Polymorphism
+Private and Public Attributes and Methods put __ underscore 2 time in front of method or attribute to make it Private
+def __hello(): private Methods
+__total = 0 this is private Attributes
+we can make static method in a class by writing @staticmethod which will not take any arguments it creates one time for all objects/instances
+to call the constructer or any method in child class of parent class we use super().__init__()
+to declare a method as class method use @classmethod
+@property decorator make the function as attribute
+getter and setter decorator learn more
+Polymorphism, Operator Overloading, Dunder Functions
+
+Relational Databases
+SQL
+import sqlite3
+
+conn = sqlite3.connect('emaildb.sqlite') #it is like opening the file
+cur = conn.cursor() #it is like handler
+cur.execute('DROP TABLE IF EXISTS Counts')
+row = cur.fetchone()
+  if row is None:
+      cur.execute('''INSERT INTO Counts(email,count)
+      VALUES (?, 1)''', (email,))
+
+Data Modeling
+Working with SQLite CRUD, create read update delete
+geocoding
+web crawling

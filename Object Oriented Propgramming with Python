@@ -1,0 +1,33 @@
+Procedural Programming
+  Data Types (Variables(int,float,str), List, Tuple, Dictionaries)
+Functions
+  Loops
+  Conditional Statements
+Regular Expressions
+Object Oriented Programming
+  classes
+    constructor def __init__():
+    self parameter
+    attributes/variables
+    default constructor
+    paramatrized constructor
+    Methods/Functions
+    Decorators
+    static method we use static method when we don't need self object these are class level methods.
+    @staticmethod
+    4 pillars of object oriented Programming
+      Abstraction
+      Encapsulation
+      Inheritance class totoyacar(car):
+      Polymorphism
+      del keyword
+      private attributes & method we use private when we don't want a method of attributes to accessed outside the class.
+      to make any method a private just put two underscores in start self.__acc_pass
+      single Inheritance class B(A)
+      multilevel Inheritance class B(A) class C(B)
+      multiple Inheritance class C(A, B)
+      super method super() to call the constructor of parent class in the constructor of child class the super refer to the parent class
+      class method decorator to change class attributes
+      @classmethod
+      def changeName(cls, name):
+      cls.name = name
